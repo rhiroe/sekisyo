@@ -1,13 +1,12 @@
 AllCops:
   TargetRubyVersion: 2.6
 
-Style/StringLiterals:
-  Enabled: true
-  EnforcedStyle: double_quotes
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*_spec.rb'
 
-Style/StringLiteralsInInterpolation:
-  Enabled: true
-  EnforcedStyle: double_quotes
+Style/PreferredHashMethods:
+  EnforcedStyle: verbose
 
 Layout/LineLength:
   Max: 120

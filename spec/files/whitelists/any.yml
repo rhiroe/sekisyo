@@ -1,0 +1,42 @@
+paths:
+  '/any':
+    get:
+      required:
+        - 'any'
+      properties:
+        any:
+          type: 'any'
+          presence: true
+          max_bytesize: 100
+    post:
+      required:
+        - 'any'
+      properties:
+        any:
+          type: 'any'
+          presence: true
+          max_bytesize: 100
+    put:
+      required:
+        - 'any'
+      properties:
+        any:
+          type: 'any'
+          presence: true
+          max_bytesize: 100
+    patch:
+      required:
+        - 'any'
+      properties:
+        any:
+          type: 'any'
+          presence: true
+          max_bytesize: 100
+    delete:
+      required:
+        - 'any'
+      properties:
+        any:
+          type: 'any'
+          presence: true
+          max_bytesize: 100

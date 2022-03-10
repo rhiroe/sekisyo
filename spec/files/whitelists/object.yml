@@ -1,0 +1,77 @@
+paths:
+  '/object':
+    get:
+      required:
+        - 'object'
+      properties:
+        object:
+          type: 'object'
+          string:
+            type: 'string'
+            presence: true
+            max_bytesize: 100
+            enum:
+              - 'apple'
+              - 'banana'
+              - 'berry'
+            match: '\d+'
+    post:
+      required:
+        - 'object'
+      properties:
+        object:
+          type: 'object'
+          string:
+            type: 'string'
+            presence: true
+            max_bytesize: 100
+            enum:
+              - 'apple'
+              - 'banana'
+              - 'berry'
+            match: '\d+'
+    put:
+      required:
+        - 'object'
+      properties:
+        object:
+          type: 'object'
+          string:
+            type: 'string'
+            presence: true
+            max_bytesize: 100
+            enum:
+              - 'apple'
+              - 'banana'
+              - 'berry'
+            match: '\d+'
+    patch:
+      required:
+        - 'object'
+      properties:
+        object:
+          type: 'object'
+          string:
+            type: 'string'
+            presence: true
+            max_bytesize: 100
+            enum:
+              - 'apple'
+              - 'banana'
+              - 'berry'
+            match: '\d+'
+    delete:
+      required:
+        - 'object'
+      properties:
+        object:
+          type: 'object'
+          string:
+            type: 'string'
+            presence: true
+            max_bytesize: 100
+            enum:
+              - 'apple'
+              - 'banana'
+              - 'berry'
+            match: '\d+'

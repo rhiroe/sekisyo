@@ -1,0 +1,37 @@
+paths:
+  '/boolean':
+    get:
+      required:
+        - 'boolean'
+      properties:
+        boolean:
+          type: 'boolean'
+          presence: true
+    post:
+      required:
+        - 'boolean'
+      properties:
+        boolean:
+          type: 'boolean'
+          presence: true
+    put:
+      required:
+        - 'boolean'
+      properties:
+        boolean:
+          type: 'boolean'
+          presence: true
+    patch:
+      required:
+        - 'boolean'
+      properties:
+        boolean:
+          type: 'boolean'
+          presence: true
+    delete:
+      required:
+        - 'boolean'
+      properties:
+        boolean:
+          type: 'boolean'
+          presence: true

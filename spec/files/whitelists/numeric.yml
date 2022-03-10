@@ -1,0 +1,62 @@
+paths:
+  '/numeric':
+    get:
+      required:
+        - 'numeric'
+      properties:
+        numeric:
+          type: 'numeric'
+          presence: true
+          max_bytesize: 100
+          enum:
+            - 1
+            - 2
+            - 3
+    post:
+      required:
+        - 'numeric'
+      properties:
+        numeric:
+          type: 'numeric'
+          presence: true
+          max_bytesize: 100
+          enum:
+            - 1
+            - 2
+            - 3
+    put:
+      required:
+        - 'numeric'
+      properties:
+        numeric:
+          type: 'numeric'
+          presence: true
+          max_bytesize: 100
+          enum:
+            - 1
+            - 2
+            - 3
+    patch:
+      required:
+        - 'numeric'
+      properties:
+        numeric:
+          type: 'numeric'
+          presence: true
+          max_bytesize: 100
+          enum:
+            - 1
+            - 2
+            - 3
+    delete:
+      required:
+        - 'numeric'
+      properties:
+        numeric:
+          type: 'numeric'
+          presence: true
+          max_bytesize: 100
+          enum:
+            - 1
+            - 2
+            - 3

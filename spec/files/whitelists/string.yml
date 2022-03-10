@@ -1,0 +1,62 @@
+paths:
+  '/string':
+    get:
+      required:
+        - 'string'
+      properties:
+        string:
+          type: 'string'
+          presence: true
+          max_bytesize: 100
+          enum:
+            - 'apple'
+            - 'banana'
+            - 'berry'
+    post:
+      required:
+        - 'string'
+      properties:
+        string:
+          type: 'string'
+          presence: true
+          max_bytesize: 100
+          enum:
+            - 'apple'
+            - 'banana'
+            - 'berry'
+    put:
+      required:
+        - 'string'
+      properties:
+        string:
+          type: 'string'
+          presence: true
+          max_bytesize: 100
+          enum:
+            - 'apple'
+            - 'banana'
+            - 'berry'
+    patch:
+      required:
+        - 'string'
+      properties:
+        string:
+          type: 'string'
+          presence: true
+          max_bytesize: 100
+          enum:
+            - 'apple'
+            - 'banana'
+            - 'berry'
+    delete:
+      required:
+        - 'string'
+      properties:
+        string:
+          type: 'string'
+          presence: true
+          max_bytesize: 100
+          enum:
+            - 'apple'
+            - 'banana'
+            - 'berry'

@@ -1,0 +1,62 @@
+paths:
+  '/file':
+    get:
+      required:
+        - 'file'
+      properties:
+        file:
+          type: 'file'
+          presence: true
+          max_bytesize: 100
+          allow_file_types:
+            - 'image/jpeg'
+            - 'image/png'
+            - 'image/gif'
+    post:
+      required:
+        - 'file'
+      properties:
+        file:
+          type: 'file'
+          presence: true
+          max_bytesize: 100
+          allow_file_types:
+            - 'image/jpeg'
+            - 'image/png'
+            - 'image/gif'
+    put:
+      required:
+        - 'file'
+      properties:
+        file:
+          type: 'file'
+          presence: true
+          max_bytesize: 100
+          allow_file_types:
+            - 'image/jpeg'
+            - 'image/png'
+            - 'image/gif'
+    patch:
+      required:
+        - 'file'
+      properties:
+        file:
+          type: 'file'
+          presence: true
+          max_bytesize: 100
+          allow_file_types:
+            - 'image/jpeg'
+            - 'image/png'
+            - 'image/gif'
+    delete:
+      required:
+        - 'file'
+      properties:
+        file:
+          type: 'file'
+          presence: true
+          max_bytesize: 100
+          allow_file_types:
+            - 'image/jpeg'
+            - 'image/png'
+            - 'image/gif'

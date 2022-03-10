@@ -1,0 +1,97 @@
+paths:
+  '/array':
+    get:
+      required:
+        - 'array'
+      properties:
+        array:
+          type: 'array'
+          presence: true
+          max_bytesize: 100
+          min_size: 2
+          max_size: 5
+          items:
+            type: 'string'
+            presence: true
+            max_bytesize: 100
+            enum:
+              - 'apple'
+              - 'banana'
+              - 'berry'
+            match: '\d+'
+    post:
+      required:
+        - 'array'
+      properties:
+        array:
+          type: 'array'
+          presence: true
+          max_bytesize: 100
+          min_size: 2
+          max_size: 5
+          items:
+            type: 'string'
+            presence: true
+            max_bytesize: 100
+            enum:
+              - 'apple'
+              - 'banana'
+              - 'berry'
+            match: '\d+'
+    put:
+      required:
+        - 'array'
+      properties:
+        array:
+          type: 'array'
+          presence: true
+          max_bytesize: 100
+          min_size: 2
+          max_size: 5
+          items:
+            type: 'string'
+            presence: true
+            max_bytesize: 100
+            enum:
+              - 'apple'
+              - 'banana'
+              - 'berry'
+            match: '\d+'
+    patch:
+      required:
+        - 'array'
+      properties:
+        array:
+          type: 'array'
+          presence: true
+          max_bytesize: 100
+          min_size: 2
+          max_size: 5
+          items:
+            type: 'string'
+            presence: true
+            max_bytesize: 100
+            enum:
+              - 'apple'
+              - 'banana'
+              - 'berry'
+            match: '\d+'
+    delete:
+      required:
+        - 'array'
+      properties:
+        array:
+          type: 'array'
+          presence: true
+          max_bytesize: 100
+          min_size: 2
+          max_size: 5
+          items:
+            type: 'string'
+            presence: true
+            max_bytesize: 100
+            enum:
+              - 'apple'
+              - 'banana'
+              - 'berry'
+            match: '\d+'

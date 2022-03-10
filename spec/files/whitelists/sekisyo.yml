@@ -1,0 +1,108 @@
+paths:
+  '/pets':
+    get:
+      properties:
+        status:
+          type: 'array'
+          items:
+            type: 'string'
+            enum:
+              - 'available'
+              - 'pending'
+              - 'sold'
+    post:
+      required:
+        - 'name'
+        - 'photo_urls'
+      properties:
+        name:
+          type: 'string'
+          presence: true
+          max_bytesize: 128
+        status:
+          type: 'string'
+          enum:
+            - 'available'
+            - 'pending'
+            - 'sold'
+        photo_urls:
+          type: 'array'
+          items:
+            type: 'string'
+            presence: true
+            max_bytesize: 128
+        category:
+          type: 'object'
+          id:
+            type: 'integer'
+            presence: true
+          name:
+            type: 'string'
+            presence: true
+            max_bytesize: 128
+        tags:
+          type: 'object'
+          id:
+            type: 'integer'
+            presence: true
+          name:
+            type: 'string'
+            presence: true
+            max_bytesize: 128
+  '/pets/{id}':
+    get:
+      required:
+        - 'id'
+      properties:
+        id:
+          type: 'integer'
+          presence: true
+    put:
+      required:
+        - 'name'
+        - 'photo_urls'
+      properties:
+        id:
+          type: 'integer'
+          presence: true
+        name:
+          type: 'string'
+          presence: true
+          max_bytesize: 128
+        status:
+          type: 'string'
+          enum:
+            - 'available'
+            - 'pending'
+            - 'sold'
+        photo_urls:
+          type: 'array'
+          items:
+            type: 'string'
+            presence: true
+            max_bytesize: 128
+        category:
+          type: 'object'
+          id:
+            type: 'integer'
+            presence: true
+          name:
+            type: 'string'
+            presence: true
+            max_bytesize: 128
+        tags:
+          type: 'object'
+          id:
+            type: 'integer'
+            presence: true
+          name:
+            type: 'string'
+            presence: true
+            max_bytesize: 128
+    delete:
+      required:
+        - 'id'
+      properties:
+        id:
+          type: 'integer'
+          presence: true

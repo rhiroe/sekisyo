@@ -1,0 +1,62 @@
+paths:
+  '/integer':
+    get:
+      required:
+        - 'integer'
+      properties:
+        integer:
+          type: 'integer'
+          presence: true
+          max_bytesize: 100
+          enum:
+            - 1
+            - 2
+            - 3
+    post:
+      required:
+        - 'integer'
+      properties:
+        integer:
+          type: 'integer'
+          presence: true
+          max_bytesize: 100
+          enum:
+            - 1
+            - 2
+            - 3
+    put:
+      required:
+        - 'integer'
+      properties:
+        integer:
+          type: 'integer'
+          presence: true
+          max_bytesize: 100
+          enum:
+            - 1
+            - 2
+            - 3
+    patch:
+      required:
+        - 'integer'
+      properties:
+        integer:
+          type: 'integer'
+          presence: true
+          max_bytesize: 100
+          enum:
+            - 1
+            - 2
+            - 3
+    delete:
+      required:
+        - 'integer'
+      properties:
+        integer:
+          type: 'integer'
+          presence: true
+          max_bytesize: 100
+          enum:
+            - 1
+            - 2
+            - 3

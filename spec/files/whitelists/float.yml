@@ -1,0 +1,62 @@
+paths:
+  '/float':
+    get:
+      required:
+        - 'float'
+      properties:
+        float:
+          type: 'float'
+          presence: true
+          max_bytesize: 100
+          enum:
+            - 1
+            - 2
+            - 3
+    post:
+      required:
+        - 'float'
+      properties:
+        float:
+          type: 'float'
+          presence: true
+          max_bytesize: 100
+          enum:
+            - 1
+            - 2
+            - 3
+    put:
+      required:
+        - 'float'
+      properties:
+        float:
+          type: 'float'
+          presence: true
+          max_bytesize: 100
+          enum:
+            - 1
+            - 2
+            - 3
+    patch:
+      required:
+        - 'float'
+      properties:
+        float:
+          type: 'float'
+          presence: true
+          max_bytesize: 100
+          enum:
+            - 1
+            - 2
+            - 3
+    delete:
+      required:
+        - 'float'
+      properties:
+        float:
+          type: 'float'
+          presence: true
+          max_bytesize: 100
+          enum:
+            - 1
+            - 2
+            - 3
