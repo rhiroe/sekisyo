@@ -39,7 +39,7 @@ module Sekisyo
       #
       def initialize(path, object)
         @path = path
-        @path_pattern = /^#{path.gsub(/{(.+?)}/, '(?<\\1>.+?)')}(\..*)?$/
+        @path_pattern = /^#{path.gsub(/{(.+?)}/, '(?<\\1>[^/]+)')}(\..*)?$/
         @methods = object.slice(*VALID_METHODS.values).transform_values do |value|
           Sekisyo::WhitelistDetails::Method.new(value)
         end
