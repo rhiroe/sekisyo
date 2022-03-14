@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'yaml'
+require 'forwardable'
 require 'hashie/mash'
 require 'hashie/extensions/parsers/yaml_erb_parser'
 require_relative 'sekisyo/version'
