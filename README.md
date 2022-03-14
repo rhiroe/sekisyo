@@ -115,7 +115,8 @@ Parameters to be accepted are specified in `properties`.
 paths:
   '/pets/{id}':
     put:
-      required: ['id']
+      required:
+        - 'id'
       properties:
         id:
           type: 'integer'
