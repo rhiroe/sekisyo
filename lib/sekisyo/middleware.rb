@@ -59,8 +59,6 @@ module Sekisyo
       @app = app
       @configuration = self.class.configuration.dup
       @whitelist = self.class.whitelist.dup
-      @logger = @configuration.logger
-      @allow_keys = @configuration.allow_keys.map(&:to_s)
     end
 
     option :file_paths, ['sekisyo.yml']
@@ -98,7 +96,7 @@ module Sekisyo
       white_properties = white_uri[env['REQUEST_METHOD']]
       return undefined_request(env) if white_properties.nil?
 
-      params = Rack::Request.new(env).params.except(*@allow_keys)
+      params = Rack::Request.new(env).params.except(*@configuration['allow_keys'].map(&:to_s))
       params.merge!(white_uri.path_params(env['PATH_INFO']))
       white_properties.valid?(params)
     end
@@ -111,7 +109,7 @@ module Sekisyo
     def undefined_request(env)
       case @configuration.undefined_request&.to_sym
       when :warning
-        @logger.warn "Undefined white list #{env['REQUEST_METHOD']} #{env['PATH_INFO']}"
+        @configuration['logger'].warn "Undefined white list #{env['REQUEST_METHOD']} #{env['PATH_INFO']}"
         true
       when :failure
         false
