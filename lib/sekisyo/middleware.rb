@@ -70,6 +70,8 @@ module Sekisyo
     def call(env)
       return @app.call(env) if valid?(env)
 
+      output_logs
+
       code   = 400
       body   = ['Bad request']
       header = { 'Content-Type' => 'text/html;charset=utf-8',
@@ -77,11 +79,6 @@ module Sekisyo
                  'X-XSS-Protection' => '1;mode=block',
                  'X-Content-Type-Options' => 'nosniff',
                  'X-Frame-Options' => 'SAMEORIGIN' }
-
-      @configuration['logger'].info 'Invalid request rejected.'
-      @configuration['logger'].info "url: #{env['PATH_INFO']}"
-      @configuration['logger'].info "params: #{@params}"
-
       [code, header, body]
     end
 
@@ -97,9 +94,7 @@ module Sekisyo
     #
     def valid?(env)
       white_uri = @whitelist.find(env['PATH_INFO'])
-      return undefined_request(env) if white_uri.nil?
-
-      white_properties = white_uri[env['REQUEST_METHOD']]
+      white_properties = white_uri&.[](env['REQUEST_METHOD'])
       return undefined_request(env) if white_properties.nil?
 
       @params = Rack::Request.new(env).params.except(*@configuration['allow_keys'].map(&:to_s))
@@ -122,6 +117,12 @@ module Sekisyo
       else
         true
       end
+    end
+
+    def output_logs
+      @configuration['logger'].info 'Invalid request rejected.'
+      @configuration['logger'].info "url: #{env['PATH_INFO']}"
+      @configuration['logger'].info "params: #{@params}"
     end
   end
 end
