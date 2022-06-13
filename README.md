@@ -78,7 +78,7 @@ Can specifies the top-level key of the parameter to be exempt from validation.
 
 ```ruby
 Sekisyo::Middleware.configure do |config|
-  config.allow_keys = ['utf8', 'authenticity_token']
+  config.allow_keys = ['authenticity_token']
 end
 ```
 
