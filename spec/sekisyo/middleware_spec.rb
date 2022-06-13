@@ -26,6 +26,18 @@ RSpec.describe Sekisyo::Middleware do
     specify { expect { app }.not_to raise_error }
   end
 
+  describe 'configure' do
+    describe 'Override configuration' do
+      before do
+        described_class.configure do |config|
+          config.undefined_request = :warning
+        end
+      end
+
+      it { expect(described_class.new(app).instance_variable_get(:@configuration)['undefined_request']).to eq :warning }
+    end
+  end
+
   describe 'GET /pets' do
     it 'no params' do
       get '/pets'
