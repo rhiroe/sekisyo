@@ -70,7 +70,7 @@ module Sekisyo
     def call(env)
       return @app.call(env) if valid?(env)
 
-      output_logs
+      output_logs(env['PATH_INFO'], @params)
 
       code   = 400
       body   = ['Bad request']
@@ -119,10 +119,10 @@ module Sekisyo
       end
     end
 
-    def output_logs
+    def output_logs(path, params)
       @configuration['logger'].info 'Invalid request rejected.'
-      @configuration['logger'].info "url: #{env['PATH_INFO']}"
-      @configuration['logger'].info "params: #{@params}"
+      @configuration['logger'].info "url: #{path}"
+      @configuration['logger'].info "params: #{params}"
     end
   end
 end
