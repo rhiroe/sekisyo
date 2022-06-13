@@ -57,6 +57,7 @@ module Sekisyo
 
     def initialize(app)
       @app = app
+      @params = {}
       @configuration = self.class.configuration.dup
       @whitelist = self.class.whitelist.dup
     end
@@ -76,6 +77,11 @@ module Sekisyo
                  'X-XSS-Protection' => '1;mode=block',
                  'X-Content-Type-Options' => 'nosniff',
                  'X-Frame-Options' => 'SAMEORIGIN' }
+
+      @configuration['logger'].info 'Invalid request rejected.'
+      @configuration['logger'].info "url: #{env['PATH_INFO']}"
+      @configuration['logger'].info "params: #{@params}"
+
       [code, header, body]
     end
 
@@ -96,9 +102,9 @@ module Sekisyo
       white_properties = white_uri[env['REQUEST_METHOD']]
       return undefined_request(env) if white_properties.nil?
 
-      params = Rack::Request.new(env).params.except(*@configuration['allow_keys'].map(&:to_s))
-      params.merge!(white_uri.path_params(env['PATH_INFO']))
-      white_properties.valid?(params)
+      @params = Rack::Request.new(env).params.except(*@configuration['allow_keys'].map(&:to_s))
+      @params.merge!(white_uri.path_params(env['PATH_INFO']))
+      white_properties.valid?(@params)
     end
 
     #
