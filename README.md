@@ -134,7 +134,7 @@ Can specify validation options that match the type.
 paths:
   '/pets':
     get:
-      required []
+      required: []
       properties:
         status:
           type: 'string'
